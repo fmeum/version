@@ -20,8 +20,6 @@ _version_bzl_repo = repository_rule(
     },
 )
 
-_generate_tag = tag_class()
-
 def _version_impl(module_ctx):
     _version_bzl_repo(
         name = "version_bzl",
@@ -33,7 +31,4 @@ def _version_impl(module_ctx):
 
 version_bzl = module_extension(
     implementation = _version_impl,
-    tag_classes = {
-        "generate": _generate_tag,
-    },
 )

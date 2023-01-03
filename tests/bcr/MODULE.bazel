@@ -11,5 +11,4 @@ local_path_override(
 )
 
 version_bzl = use_extension("@version//:extensions.bzl", "version_bzl")
-version_bzl.generate()
 use_repo(version_bzl, "version_bzl")
