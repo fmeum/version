@@ -1,0 +1,15 @@
+module(
+    name = "version.-_test",
+    version = "1.2.3.abc",
+)
+
+bazel_dep(name = "version", version = "")
+
+local_path_override(
+    module_name = "version",
+    path = "../..",
+)
+
+version_bzl = use_extension("@version//:extensions.bzl", "version_bzl")
+version_bzl.generate()
+use_repo(version_bzl, "version_bzl")

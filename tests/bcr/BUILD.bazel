@@ -1,0 +1,3 @@
+load("@version_bzl//:version.bzl", "VERSION___TEST_VERSION")
+
+fail("VERSION___TEST_VERSION is not 1.2.3.abc") if VERSION___TEST_VERSION != "1.2.3.abc" else None
